@@ -1,0 +1,108 @@
+<%- include("partials/header") -%>
+
+<div id="home" class="row">
+  <div class="col-lg-6 col-sm-12">
+    <h1>Randomly</h1>
+    <p>Your all in one random generator.</p>
+
+
+    <!-- <div class="ad-div">
+      <h4>Click, fuel our caffeine addiction!</h4>
+    </div> -->
+  </div>
+
+  <div class="col-lg-6 col-sm-12">
+    <div class="row">
+      <div class="col-lg-5 col-sm-12 options-div">
+
+        <h3>Random Generators</h3>
+
+        <button id="jokeButton" class="btn btn-primary btn-lg randomer-button" onclick="generateRandom('joke')">
+          <p class="randomer-text">Generate jokes</p>
+        </button>
+        <button class="btn btn-primary btn-lg randomer-button" type="button" onclick="generateRandom('pickup-line')">
+          <p class="randomer-text">Generate Pickup lines</p>
+        </button>
+        <button class="btn btn-primary btn-lg randomer-button" type="button" onclick="generateRandom('baby-name')">
+          <p class="randomer-text">Generate Names</p>
+        </button>
+        <button class="btn btn-primary btn-lg randomer-button" type="button" onclick="generateRandom('company-name')">
+          <p class="randomer-text">Generate Company Names</p>
+        </button>
+        <button class="btn btn-primary btn-lg randomer-button" type="button" onclick="generateRandom('gamer-tag')">
+          <p class="randomer-text">Generate Gamer Tags</p>
+        </button>
+        <button class="btn btn-primary btn-lg randomer-button" type="button" onclick="generateRandom('password')">
+          <p class="randomer-text">Generate Passwords</p>
+        </button>
+        <button class="btn btn-primary btn-lg randomer-button" type="button" onclick="generateRandom('pet-name')">
+          <p class="randomer-text">Generate Pet Names</p>
+        </button>
+        <button class="btn btn-primary btn-lg randomer-button" type="button" onclick="generateRandom('quote')">
+          <p class="randomer-text">Generate Quotes</p>
+        </button>
+
+      </div>
+
+      <div class="col-lg-6 col-sm-12 results-div">
+        <img class="home-img" src="/images/rocket.png" alt="rocket-img">
+        <div class="generated-div">
+          <p id="result" class="randomer-text"><%= random %></p>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-lg copy-btn" onclick="copyText()"><i class="fas fa-copy"></i> Copy text</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="footer">
+
+  <div class="row">
+
+    <div class="col-lg-4">
+      <a href="https://oxlac.com/">
+        <p class="footerText">Oxlac</p>
+      </a>
+    </div>
+    <div class="col-lg-4">
+      <p>© Oxlac 2023</p>
+    </div>
+    <div class="col-lg-4">
+      <a href="#">
+        <p class="footerText">Contact Support</p>
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+
+  function generateRandom(type) {
+    fetch(`/generate/${type}`)
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("result").textContent = data;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  function copyText() {
+  var text = document.getElementById("result").innerText;
+  var textarea = document.createElement("textarea");
+  textarea.value = text;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+}
+
+</script>
+
+
+
+<%- include("partials/footer") -%>

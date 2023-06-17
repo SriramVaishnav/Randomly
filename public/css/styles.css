@@ -1,0 +1,250 @@
+@-webkit-keyframes shine {
+	0%, 10% {
+		background-position: -1000px;
+	}
+	20% {
+		background-position: top left;
+	}
+	90% {
+		background-position: top right;
+	}
+	100% {
+		background-position: 1000px;
+	}
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+body {
+  background-color: #fff;
+  /* font-family: 'Pangolin', cursive; */
+  font-family: 'Rubik', sans-serif;
+  background-color: #E6FFFD;
+  background-image: url("/images/cool-background.svg");
+  background-size: cover;
+}
+
+#home {
+  height: 100vh;
+  width: 100%;
+  padding: 5%;
+}
+
+h1 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+  font-size: 10rem;
+  background: linear-gradient(to right, #B799FF, #19A7CE);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 10%;
+  color: #fff;
+}
+
+p {
+  font-family: 'Pangolin', cursive;
+  font-size: 1.8rem;
+}
+
+a {
+  color: #fff;
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.ad-div{
+  border-radius: 20px;
+  padding: 2%;
+  margin-top: 10%;
+  background-color: rgb(87, 108, 188, 0.5);
+  color: #fff;
+  text-align: center;
+  width: 60%;
+}
+
+.options-div {
+  border-radius: 20px;
+  padding: 3%;
+  background-color: rgb(230, 255, 253, 0.4);
+  color: #fff;
+  height: 550px;
+  overflow-y:scroll;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.options-div:hover{
+  transform: scale(1);
+}
+
+.options-div::-webkit-scrollbar {
+  width: 1px; /* width of the entire scrollbar */
+}
+
+.options-div::-webkit-scrollbar-track {
+  background: none; /* color of the tracking area */
+}
+
+.options-div::-webkit-scrollbar-thumb {
+  background-color: none; /* color of the scroll thumb */
+  border-radius: 10px; /* roundness of the scroll thumb */
+}
+
+.randomer-button {
+  background-color: rgb(87, 108, 188, 0.5);
+  border-radius: 20px;
+  padding: 5%;
+  width: 90%;
+  border: none;
+  margin: 3%;
+}
+
+.randomer-button:hover {
+  background-color: rgb(87, 108, 188, 1);
+  cursor: pointer;
+}
+
+.randomer-button:active{
+  background-color: rgb(230, 255, 253, 0.4);
+  color: rgb(87, 108, 188, 1);
+}
+
+.randomer-text{
+  margin: auto;
+}
+
+.home-img {
+  animation: floating 1s infinite;
+}
+
+.results-div {
+  border-radius: 20px;
+  padding: 5%;
+  background-color: rgb(87, 108, 188, 0.5);
+  margin-left: 5%;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.generated-div {
+  background-color: rgb(230, 255, 253, 0.5);
+  border-radius: 20px;
+  padding: 5%;
+  margin: 3%;
+}
+
+.copy-btn {
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(87, 108, 188, 1);
+  font-size: 1.6rem;
+}
+
+.copy-btn:hover {
+  border: none;
+  background-color: rgb(230, 255, 253, 0.5);
+}
+
+.copy-btn:active{
+  background-color: rgb(87, 108, 188, 1);
+}
+
+/* footer section */
+#footer {
+  padding: 2% 0;
+  background-color: #576CBC;
+  color: #fff;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.footerText:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+@media (max-width: 1200px){
+
+  body{
+    background-image: url("/images/mobile-bg.png");
+    padding: 3%;
+    text-align: center;
+  }
+
+  p{
+    font-size: 5rem;
+  }
+
+  h3{
+    font-size: 5rem;
+    margin-bottom: 20px;
+  }
+
+  h4{
+    font-size: 4rem;
+  }
+
+  #home{
+    padding: 0;
+    height: auto;
+  }
+
+  .ad-div{
+    width: 100%;
+  }
+
+  .options-div{
+    margin-left: 2%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 700px;
+    background-color: #B8CFE6;
+    background-color: rgb(169, 190, 218, 0.5);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .results-div{
+    margin-left: 2%;
+    margin-bottom: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .home-img{
+    height: 380px;
+  }
+
+  .copy-btn{
+    height: 100px;
+    width: 300px;
+    font-size: 3.5rem;
+  }
+
+  #footer{
+    border-radius: 20px;
+  }
+
+}
+
+
+.test:active {
+  color: red;
+  background-color: blue;
+}
